@@ -1,0 +1,92 @@
+% MATH, CS
+\RequirePackage{amsmath}
+\RequirePackage{thmtools}
+\RequirePackage{amssymb}
+\RequirePackage{mathrsfs}
+\RequirePackage{gauss}
+\RequirePackage{marvosym}
+\RequirePackage{blkarray}
+\RequirePackage{bigstrut}
+\RequirePackage{marginnote}
+\RequirePackage{polynom}
+\RequirePackage{cancel}
+\RequirePackage{stmaryrd}
+\RequirePackage[ruled, vlined, linesnumbered]{algorithm2e}
+\SetKwComment{Comment}{/* }{ */}
+
+% CONSTRUCTING
+\RequirePackage{tikz}
+\RequirePackage{pgfkeys}
+\usetikzlibrary{chains, shapes.geometric, decorations, positioning, arrows.meta, backgrounds, fit, calc, shadings, shadows}
+\RequirePackage{forest}
+\RequirePackage[skins]{tcolorbox}
+\RequirePackage{graphicx}
+
+% SUBJECT-SPECIFIC
+\RequirePackage{listings}
+\RequirePackage{lstautogobble}
+\RequirePackage{lstmisc}
+
+% LSTSTYLE
+\definecolor{codegray}{rgb}{0.5, 0.5, 0.5}
+\definecolor{codepurple}{rgb}{0.58, 0, 0.82}
+\definecolor{backcolor}{rgb}{0.94, 0.94, 0.95}
+\definecolor{backcolordark}{rgb}{0.35, 0.35, 0.39}
+\definecolor{backg}{rgb}{0.93, 0.93, 0.94}
+\definecolor{tagtxt}{rgb}{0.24, 0.24, 0.26}
+
+\lstdefinestyle{lststyle}{
+    commentstyle= \color{codegray},
+    keywordstyle= \ttfamily\bfseries\itshape,
+    numberstyle= \ttfamily\scriptsize\color{codegray},
+    basicstyle= \ttfamily\upshape,
+    backgroundcolor= \color{backcolor},
+    escapechar= \@,
+    extendedchars=true,
+    framexleftmargin= 4pt,
+    breakatwhitespace= false,
+    breaklines= true,
+    autogobble= true,
+    captionpos= b,
+    keepspaces= true,
+    numbers= left,
+    numbersep= 8pt,
+    showspaces= false,
+    showstringspaces= false,
+    showtabs= false,
+    tabsize= 4,
+    literate=
+        {==}{{==}}2
+        {<=}{{<=}}2
+        {>=}{{>=}}2
+        {!=}{{!=}}2
+        {+=}{{+=}}2
+        {-=}{{-=}}2
+        {*=}{{*=}}2
+        {/=}{{/=}}2
+        {==>}{{==>}}3
+        {<==}{{<==}}3
+        {<->}{{<->}}3
+        {->}{{->}}2
+        {<-}{{<-}}2
+        {=>}{{=>}}2
+        {+cdot}{{∙}}1
+        {+div}{{∕}}1
+        {+congruent}{{≡}}1
+        {+elem}{{∈}}1
+        {+exists}{{∃}}1
+        {+forall}{{∀}}1
+        {+circ}{{◦}}1
+        {+join}{{⋈}}1
+        {+N}{{ℕ}}1
+        {+R}{{ℝ}}1
+        {+Q}{{ℚ}}1
+        {+C}{{ℂ}}1
+        {+subset}{{⊂}}1
+        {+supset}{{⊃}}1
+        {+subseteq}{{⊆}}1
+        {+supseteq}{{⊇}}1
+        {+nsubset}{{⊄}}1
+        {+nexists}{{∄}}1
+}
+\lstset{style= lststyle}

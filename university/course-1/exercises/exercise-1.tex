@@ -1,0 +1,85 @@
+\documentclass[10pt]{article}
+
+\usepackage{../course-info}
+
+\setcounter{exercisenumber}{0}
+\newcommand{\dueto}{01.01.1970}
+
+\begin{document}
+    \spawncover
+
+    \begin{task}[Primzahlüberprüfung]
+        \begin{subtask}
+            Schreibe ein Python-Programm, das den Nutzer nach einer ganzen Zahl fragt und dann überprüft, ob die eingegebene Zahl eine Primzahl ist oder nicht.
+            Eine Primzahl ist eine natürliche Zahl grö{\ss}er als 1, die nur durch 1 und sich selbst ohne Rest teilbar ist.
+
+            \begin{solution}
+                \begin{lstlisting}[language= python]
+                    def ist_primzahl(zahl):
+                        if zahl <= 1:
+                            return False
+                        elif zahl <= 3:
+                            return True
+                        elif zahl % 2 == 0 or zahl % 3 == 0:
+                            return False
+                        i = 5
+                        while i * i <= zahl:
+                            if zahl % i == 0 or zahl % (i + 2) == 0:
+                                return False
+                            i += 6
+                        return True
+
+                    def main():
+                        try:
+                            eingabe = int(input("Geben Sie eine ganze Zahl ein: "))
+                            if ist_primzahl(eingabe):
+                                print(f"{eingabe} ist eine Primzahl.")
+                            else:
+                                print(f"{eingabe} ist keine Primzahl.")
+                        except ValueError:
+                            print("Ungültige Eingabe. Bitte geben Sie eine ganze Zahl ein.")
+
+                    if __name__ == "__main__":
+                        main()
+                \end{lstlisting}
+                Dieses Programm definiert eine Funktion \inlinecode{ist\_primzahl()}, die überprüft, ob eine Zahl eine Primzahl ist.
+                In der \inlinecode{main}-Funktion wird der Benutzer nach einer Zahl gefragt und das Programm gibt dann aus, ob die Zahl eine Primzahl ist oder nicht.
+            \end{solution}
+        \end{subtask}
+
+        \begin{subtask}
+            Führen Sie eine Laufzeitanalyse für dieses Python-Programm durch.
+            Beschreiben Sie die Komplexität des Algorithmus in Abhängigkeit von der Größe der übergebenen Zahl und erläutern Sie die beste, durchschnittliche und schlechteste Laufzeit des Programms.
+
+            \begin{solution}
+                Die Laufzeitanalyse für den gegebenen Python-Code, der eine Zahl daraufhin überprüft, ob sie eine Primzahl ist oder nicht, kann durch die Betrachtung der Hauptfunktion \inlinecode{ist\_primzahl()} erfolgen.
+                Die Hauptlaufzeit des Programms hängt von der Größe der übergebenen Zahl ab.
+
+                Um die Laufzeit zu analysieren, betrachten wir die Anzahl der Iterationen in der Schleife innerhalb der Funktion \inlinecode{ist\_primzahl()}.
+                Diese Schleife läuft bis zur Quadratwurzel der übergebenen Zahl.
+                Die Quadratwurzel ist ein guter Anhaltspunkt, da, wenn es einen Teiler gibt, dieser nicht größer als die Quadratwurzel der Zahl sein kann.
+
+                Die Komplexität der Funktion \inlinecode{ist\_primzahl()} beträgt daher ungefähr $\O(\sqrt{N})$, wobei $N$ die übergebene Zahl ist.
+                Dies bedeutet, dass die Laufzeit des Programms proportional zur Quadratwurzel der übergebenen Zahl ist.
+
+                Hier ist eine Zusammenfassung der Laufzeitanalyse:
+
+                \begin{itemize}
+                    \item Best Case Laufzeit: $\O(1)$ (wenn die Zahl 2 oder 3 ist, da die Funktion schnell feststellen kann, dass es sich um Primzahlen handelt)
+                    \item Average Case Laufzeit: $\O(\sqrt{N})$
+                    \item Worst Case Laufzeit: $\O(\sqrt{N})$ (wenn die übergebene Zahl eine sehr große Primzahl ist)
+                \end{itemize}
+            \end{solution}
+        \end{subtask}
+    \end{task}
+
+    \begin{task}[Mathematik]
+        Geben Sie einen coolen mathematischen Ausdruck an.
+
+        \begin{solution}
+            \[
+                \int_{-\infty}^{\infty} \mathrm{e}^{-x^2} \cdot \left(1 + \frac{\sin^2(x)}{x^2}\right) \, \mathrm{d}x = \frac{\pi}{\sqrt{2}} \cdot \sum_{n=0}^{\infty} (-1)^n \cdot \frac{(2n)!}{2^{2n} \cdot (n!)^2}.
+            \]
+        \end{solution}
+    \end{task}
+\end{document}

@@ -1,0 +1,54 @@
+% TASK, SUBTASK AND SOLUTION
+\newcounter{exercisenumber}
+\newcounter{task}[exercisenumber]
+\renewcommand{\thetask}{\theexercisenumber.\arabic{task}}
+
+\newenvironment{task}[1][]{
+    \refstepcounter{task}
+    \setcounter{subtask}{0}
+    \parskip
+    \begin{center}
+        \large \scshape
+        {\color{black!80}{\sffamily\bfseries Aufgabe \thetask}\ifx&#1&\else: #1\fi{\bfseries\sffamily.}}
+    \end{center}
+    \slshape
+    }{
+    \medskip
+}
+
+\newcounter{subtask}[task]
+\renewcommand{\thesubtask}{\alph{subtask}}
+
+\newenvironment{subtask}{
+    \refstepcounter{subtask}
+    \parskip
+    \begin{enumerate}[labelsep*=6pt, align=left, leftmargin=*]
+        \item[\color{Maroon}{\normalfont\textsf{\bfseries (\,\thetask.\thesubtask\,)}}]
+        \slshape
+        }{
+    \end{enumerate}
+}
+
+\newenvironment{solution}{
+    \begin{adjustwidth}{1em}{0em} \normalfont
+    }{
+    \end{adjustwidth}
+}
+
+\makeatletter
+\newenvironment{proof}[1][]{
+    \normalfont
+    \trivlist
+    \item[\hskip\labelsep\textsc{\proofname\ifx&#1&\else{ }(#1)\fi.}]
+    }{
+    \hfill\proofbox\endtrivlist\@endpefalse
+}
+
+\newenvironment{counterproof}[1][]{
+    \normalfont
+    \trivlist
+    \item[\hskip\labelsep\textsc{\proofname\ifx&#1&\else{ }(#1)\fi.}]
+    }{
+    \hfill\smashtimes\endtrivlist\@endpefalse
+}
+\makeatother

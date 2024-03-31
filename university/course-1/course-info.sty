@@ -1,0 +1,25 @@
+\RequirePackage{../../.src/head}
+
+\newcommand{\university}{Universität Hamburg}
+\newcommand{\degree}{B.Sc.}
+\newcommand{\faculty}{Informatics}
+\newcommand{\coursenumber}{12-345}
+\newcommand{\coursename}{Name of course}
+\newcommand{\courseshort}{NOC}
+\newcommand{\coursetype}{Exercise}
+\newcommand{\coursetypespecific}{Sheet}
+\newcommand{\docent}{Prof. Dr. John Doe}
+
+% AUTHORS
+\newtoks\cols
+\newcount\NOfAuthors
+\NOfAuthors= 4
+
+\newcommand{\authors}{
+    \begin{center}
+        \begin{tabular}{*{\NOfAuthors}{c}}
+        {\scshape Vorname Nachname}         & {\scshape Vorname Nachname}       & {\scshape Vorname Nachname}       & {\scshape Vorname Nachname} \\
+        1234567                             & 1234567                           & 1234567                           & 1234567
+        \end{tabular}
+    \end{center}
+}

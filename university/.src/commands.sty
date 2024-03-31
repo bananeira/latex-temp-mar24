@@ -1,0 +1,45 @@
+\newcommand{\inlinecode}[1]{%
+    \tikz[baseline]{%
+        \node[anchor= base, text= tagtxt, fill= backg, font= \normalfont\bfseries\ttfamily, text depth= 0.5mm, rounded corners= 1pt, inner sep= 2pt] {#1};
+    }%
+}
+
+\newcommand{\smashtimes}{%
+    \tikz[x= 0.22em, y= 0.22em, line width= 0.032em] {%
+        \draw (0, 2.83) -- (2.83, 0) (0.71, 3.54) -- (3.54, 0.71) (0, 0.71) -- (2.83, 3.54) (0.71, 0) -- (3.54, 2.83);
+    }
+}
+
+\newcommand{\proofbox}{%
+    \tikz {%
+        \draw[black, fill= black] (0, 0) rectangle (0.22, 0.22);
+    }
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\DeclareMathAlphabet{\mathcalstd}{OMS}{cmsy}{m}{n}
+\renewcommand{\O}{\mathcalstd{O}}
+\renewcommand{\path}[2]{#1 \rightsquigarrow #2}
+
+\renewcommand{\obar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand{\maxn}[1]{\norm{#1}S}
+\newcommand{\diffrac}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\Lim}[2]{\lim_{#1 \rightarrow #2}}
+\newcommand{\Limin}[1]{\Lim{#1}{\infty}}
+\newcommand{\nset}[2]{[[1,, \dots,, #1]]}
+\newcommand{\scalProd}[2]{\left \langle #1;, #2 \right \rangle}
+\newcommand{\taskps}[2]{\noindent\textsf{\textbf{Aufgabe \blattnr.#1}} \;\quad \textsf{#2}\\[6px]}
+
+\DeclareMathOperator{\indeg}{indeg}
+\DeclareMathOperator{\outdeg}{outdeg}
