@@ -9,9 +9,9 @@
     \parskip
     \begin{center}
         \large \scshape
-        {\color{black!80}{\sffamily\bfseries Aufgabe \thetask}\ifx&#1&\else: #1\fi{\bfseries\sffamily.}}
+        {\color{black!80}{\bfseries Aufgabe \thetask}\ifx&#1&\else: #1\fi{\bfseries.}}
     \end{center}
-    \slshape
+    \slshape\bfseries
     }{
     \medskip
 }
@@ -23,8 +23,8 @@
     \refstepcounter{subtask}
     \parskip
     \begin{enumerate}[labelsep*= 6pt, align= left, leftmargin= *]
-        \item[\color{Maroon}{\normalfont\textsf{\bfseries (\,\thetask.\thesubtask\,)}}]
-        \slshape
+        \item[\color{Maroon}{\normalfont\bfseries (\,\thetask.\thesubtask\,)}]
+        \slshape\bfseries
         }{
     \end{enumerate}
 }

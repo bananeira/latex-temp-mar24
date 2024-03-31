@@ -17,15 +17,17 @@
 \linespread{1.25}
 
 % FONT
+\RequirePackage{sansmath}
+\sansmath
 \RequirePackage{fontspec}
 \setsansfont{MerriweatherSans}[
     Path= ../../.assets/MerriweatherSans/,
     Scale= 0.9,
     Extension= .ttf,
-    UprightFont= *-Regular,
-    BoldFont= *-Bold,
-    ItalicFont= *-Italic,
-    BoldItalicFont= *-BoldItalic
+    UprightFont= *-Light,
+    BoldFont= *-Medium,
+    ItalicFont= *-LightItalic,
+    BoldItalicFont= *-MediumItalic
 ]
 \setmonofont{JetBrainsMono}[
     Path= ../../.assets/JetBrainsMono/,
@@ -38,9 +40,7 @@
     Ligatures= TeX
 ]
 
-%\RequirePackage{sansmath}
-%\sansmath
-%\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\familydefault}{\sfdefault}
 
 % HEADER / FOOTER
 \RequirePackage{fancyhdr}
