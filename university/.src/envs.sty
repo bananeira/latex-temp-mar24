@@ -6,14 +6,12 @@
 \newenvironment{task}[1][]{
     \refstepcounter{task}
     \setcounter{subtask}{0}
-    \parskip
     \begin{center}
         \large \scshape
         {\color{black!80}{\bfseries Aufgabe \thetask}\ifx&#1&\else: #1\fi{\bfseries.}}
     \end{center}
     \slshape\bfseries
     }{
-    \medskip
 }
 
 \newcounter{subtask}[task]
@@ -21,10 +19,9 @@
 
 \newenvironment{subtask}{
     \refstepcounter{subtask}
-    \parskip
     \begin{enumerate}[labelsep*= 6pt, align= left, leftmargin= *]
         \item[\color{Maroon}{\normalfont\bfseries (\,\thetask.\thesubtask\,)}]
-        \slshape\bfseries
+        \slshape\bfseries\vspace{-4pt}
         }{
     \end{enumerate}
 }
